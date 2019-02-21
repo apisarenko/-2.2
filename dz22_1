@@ -1,0 +1,34 @@
+try:
+    a, b, c = input('Введите через пробел знак арифметического действия и два числа: ').split()
+except ValueError:
+    print('Ошибка значения. Вы ввели меньше или больше значений')
+operator = ['+', '-', '*', '/']
+try:
+    assert a in operator
+except NameError:
+    print('Ошибка имени. Вы не ввели пробел между первым и вторым введенными знаками')
+except AssertionError:
+    print('Ошибка утверждения. Первый введеный символ не знак арифметического действия')
+try:
+    b = int(b)
+except ValueError:
+    print('Ошибка значения. Второй символ не число')
+try:
+    c = int(c)
+except ValueError:
+    print('Ошибка значения. Третий символ не число')
+readi_number = ()
+
+if a == '+':
+    readi_number = b + c
+elif a == '-':
+    readi_number = b - c
+elif a == '*':
+    readi_number = b * c
+elif a == '/':
+    try:
+        readi_number = b / c
+    except ZeroDivisionError:
+        print('Ошибка деления на ноль. На ноль делить нельзя')
+        exit()
+print(readi_number)
